@@ -241,7 +241,7 @@ header {
   padding: 6px 22px;
 }
 
-.hero-button {
+.button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -264,8 +264,8 @@ header {
   transition: background-color 250ms var(--timing-function);
 }
 
-.hero-button:hover,
-.hero-button:focus {
+.button:hover,
+.button:focus {
   background-color: #188ce8;
 }
 
@@ -733,4 +733,66 @@ header {
 
 .footer-soclink {
   background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ФУТЕР БЛОК 3 */
+.send-message {
+  display: inline-block;
+  margin-left: 93px;
+}
+
+.send-message > .subtitle {
+  color: #ffffff;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-label {
+}
+
+.form-input {
+  display: flex;
+  width: 358px;
+  height: 50px;
+  margin-top: 20px;
+  padding: 15px 16px;
+
+  font-family: var(--main-font);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: var(--spacing);
+  color: rgba(255, 255, 255, 0.6);
+  background-color: inherit;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-sizing: border-box;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+}
+
+.send-button {
+  display: flex;
+  margin-top: 20px;
+  margin-left: 12px;
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 29px;
+  padding-right: 28px;
+}
+
+.send-icon-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.send-icon {
+  fill: var(--white-text-color);
 }
