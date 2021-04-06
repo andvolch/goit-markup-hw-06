@@ -851,6 +851,7 @@ input[placeholder="E-mail"] {
 
 .form-icon {
   margin-right: 12px;
+  transition: box-shadow 250ms var(--timing-function);
 }
 
 .form-input {
@@ -866,6 +867,7 @@ input[placeholder="E-mail"] {
   border: 1px solid rgba(33, 33, 33, 0.2);
   box-sizing: border-box;
   border-radius: 4px;
+  transition: box-shadow 250ms var(--timing-function);
 }
 
 .form-input:hover,
@@ -909,6 +911,7 @@ input[placeholder="E-mail"] {
   color: rgba(117, 117, 117, 0.5);
 
   outline: none;
+  transition: box-shadow 250ms var(--timing-function);
 }
 
 .form-textarea:hover,
