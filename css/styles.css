@@ -815,6 +815,7 @@ input[placeholder="E-mail"] {
 .form-field {
   margin-right: 0;
   margin-left: 0;
+  cursor: pointer;
 }
 
 .form-title {
@@ -848,6 +849,10 @@ input[placeholder="E-mail"] {
   color: #757575;
 }
 
+.form-icon {
+  margin-right: 12px;
+}
+
 .form-input {
   display: flex;
   width: 448px;
@@ -861,6 +866,25 @@ input[placeholder="E-mail"] {
   border: 1px solid rgba(33, 33, 33, 0.2);
   box-sizing: border-box;
   border-radius: 4px;
+}
+
+.form-input:hover,
+.form-input:focus {
+  border: 1px solid var(--akcent-color);
+}
+
+.form-input:hover .form-icon,
+.form-input:focus .form-icon {
+  fill: var(--akcent-color);
+}
+
+.input {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  background-color: inherit;
 }
 
 .form-textarea {
@@ -883,6 +907,22 @@ input[placeholder="E-mail"] {
   letter-spacing: 0.01em;
 
   color: rgba(117, 117, 117, 0.5);
+
+  outline: none;
+}
+
+.form-textarea:hover,
+.form-textarea:focus {
+  border: 1px solid var(--akcent-color);
+}
+
+.form-contract {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-link {
+  color: var(--akcent-color);
 }
 
 .button-send {
@@ -891,8 +931,4 @@ input[placeholder="E-mail"] {
   padding-right: 55px;
   padding-left: 56px;
   margin-top: 30px;
-}
-
-.form-link {
-  color: var(--akcent-color);
 }
