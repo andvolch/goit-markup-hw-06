@@ -297,8 +297,7 @@ header {
   transform: translate(-50%, -50%);
 
   width: 528px;
-  /* height: 581px; */
-  padding: 8px;
+  height: 581px;
 
   background-color: var(--main-background-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -320,13 +319,23 @@ header {
 }
 
 .close-box {
-  display: flex;
+  position: absolute;
+  top: 8px;
+  right: 8px;
   padding: 0;
-  margin-left: auto;
+
   background-color: #ffffff;
   border: none;
 }
 
+.close-icon:hover,
+.close-icon:focus {
+  fill: var(--akcent-color);
+}
+
+.close-icon {
+  transition: fill 250ms var(--akcent-color);
+}
 /* Кнопка-фильтры */
 .button-filter {
   font-family: var(--main-font);
@@ -751,9 +760,6 @@ header {
   align-items: center;
 }
 
-.form-label {
-}
-
 .form-input {
   display: flex;
   width: 358px;
@@ -770,11 +776,14 @@ header {
   background-color: inherit;
 
   border: 1px solid rgba(255, 255, 255, 0.3);
-  box-sizing: border-box;
+
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
 }
 
+.form-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
 .send-button {
   display: flex;
   margin-top: 20px;
@@ -796,122 +805,93 @@ header {
 .send-icon {
   fill: var(--white-text-color);
 }
-/* работает, но не дает цвет на placeholder */
-input[placeholder="E-mail"] {
-  color: rgba(255, 255, 255, 0.6);
-}
 
 /* ФОРМА МОДАЛЬНОГО ОКНА */
+
 .form-modal {
-  display: flex;
-  flex-direction: column;
-
-  margin-top: 2px;
-  margin-bottom: 32px;
-  margin-right: 32px;
-  margin-left: 32px;
-}
-
-.form-field {
-  margin-right: 0;
-  margin-left: 0;
-  cursor: pointer;
+  width: 448px;
+  margin: 40px;
+  padding: 0;
 }
 
 .form-title {
   display: flex;
-  margin-bottom: 12px;
   justify-content: center;
-
+  margin-bottom: 12px;
   font-weight: 700;
   font-size: 20px;
   line-height: 1.15;
   text-align: center;
   color: var(--main-text-color);
   letter-spacing: var(--spacing);
+}
 
-  color: #212121;
+.form-field {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-top: 10px;
+}
+.input {
+  font-size: 14px;
+  padding-left: 42px;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  padding-right: 12px;
+
+  border-radius: 4px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  transition: box-shadow 250ms var(--timing-function);
+  cursor: pointer;
 }
 
 .form-modal-label {
-  display: flex;
-  margin-right: 0;
-}
+  /* margin-bottom: 4px; */
 
-.label-text {
   font-weight: 400;
   font-size: 12px;
   line-height: 1.67;
-  /* identical to box height */
-
   letter-spacing: 0.01em;
-
   color: #757575;
 }
 
 .form-icon {
-  margin-right: 12px;
+  position: absolute;
+  top: 50%;
+  left: 12px;
   transition: box-shadow 250ms var(--timing-function);
 }
 
-.form-input {
-  display: flex;
-  width: 448px;
-  height: 40px;
-
-  margin-top: 4px;
-  margin-bottom: 10px;
-  padding: 11px 12px;
-
-  color: var(--main-text-color);
-  border: 1px solid rgba(33, 33, 33, 0.2);
-  box-sizing: border-box;
-  border-radius: 4px;
-  transition: box-shadow 250ms var(--timing-function);
-}
-
-.form-input:hover,
-.form-input:focus {
+.input:hover,
+.input:focus {
   border: 1px solid var(--akcent-color);
 }
 
-.form-input:hover .form-icon,
-.form-input:focus .form-icon {
+.input:hover + .form-icon,
+.input:focus + .form-icon {
   fill: var(--akcent-color);
-}
-
-.input {
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  border: none;
-  outline: none;
-  background-color: inherit;
 }
 
 .form-textarea {
   resize: none;
   display: flex;
   width: 448px;
-  height: 120px;
-
-  margin-top: 4px;
-  margin-bottom: 10px;
+  margin-bottom: 2px;
   padding: 12px 16px;
 
+  font-size: 14px;
   border: 1px solid rgba(33, 33, 33, 0.2);
-  box-sizing: border-box;
   border-radius: 4px;
+  cursor: pointer;
+  transition: box-shadow 250ms var(--timing-function);
+}
 
+.form-textarea::placeholder {
+  color: rgba(117, 117, 117, 0.5);
   font-weight: 400;
   font-size: 12px;
   line-height: 1.67;
   letter-spacing: 0.01em;
-
-  color: rgba(117, 117, 117, 0.5);
-
-  outline: none;
-  transition: box-shadow 250ms var(--timing-function);
 }
 
 .form-textarea:hover,
@@ -921,17 +901,50 @@ input[placeholder="E-mail"] {
 
 .form-contract {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
+
+.contract-label {
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.03em;
+  color: #757575;
+}
+
 .form-link {
+  margin: 3px;
   color: var(--akcent-color);
 }
 
-.button-send {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-right: 55px;
-  padding-left: 56px;
-  margin-top: 30px;
+.contract-checkbox {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  position: absolute;
+}
+
+.form-icon-check {
+  margin-right: 7px;
+  margin-left: 14px;
+  border: 2px solid var(--main-text-color);
+  border-radius: 2px;
+  fill: var(--white-text-color);
+}
+
+.contract-checkbox:checked + .form-icon-check {
+  border-color: var(--akcent-color);
+  background-color: var(--akcent-color);
+  background-size: contain;
+  background-origin: border-box;
+}
+
+.button-form {
+  margin-top: 0;
+  margin-bottom: 0px;
+  padding: 10px 55px;
 }
