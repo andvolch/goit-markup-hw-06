@@ -115,7 +115,7 @@ header {
 }
 
 .logo {
-  margin-right: 93px;
+  justify-content: start;
 
   font-family: var(--minor-font);
   font-weight: 700;
@@ -698,11 +698,19 @@ header {
 
 .footer-box {
   display: flex;
+  flex-basis: calc(100% - 15px);
+  justify-content: space-between;
+  align-items: baseline;
+}
+.box-contacts {
+  display: flex;
+  flex-basis: calc((50% - 45px) / 2));
   align-items: baseline;
 }
 .footer-contacts {
-  display: inline-block;
-  justify-content: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
 }
 .footer-studio {
   color: var(--white-text-color);
@@ -718,7 +726,7 @@ header {
   color: #ffffff;
 }
 
-.social-list {
+.contact-link {
   color: rgba(255, 255, 255, 0.6);
 }
 
@@ -748,6 +756,7 @@ header {
 .send-message {
   display: inline-block;
   margin-left: 93px;
+  
 }
 
 .send-message > .subtitle {
@@ -830,8 +839,13 @@ header {
   display: flex;
   flex-direction: column;
   position: relative;
-  margin-top: 10px;
+  
 }
+
+.form-field:not(:last-child) {
+  margin-bottom: 10px;
+}
+
 .input {
   font-size: 14px;
   padding-left: 42px;
@@ -846,8 +860,6 @@ header {
 }
 
 .form-modal-label {
-  /* margin-bottom: 4px; */
-
   font-weight: 400;
   font-size: 12px;
   line-height: 1.67;
@@ -876,7 +888,7 @@ header {
   resize: none;
   display: flex;
   width: 448px;
-  margin-bottom: 2px;
+  height: 120px;
   padding: 12px 16px;
 
   font-size: 14px;
@@ -933,14 +945,18 @@ header {
   margin-left: 14px;
   border: 2px solid var(--main-text-color);
   border-radius: 2px;
-  fill: var(--white-text-color);
+  fill: none;
 }
 
 .contract-checkbox:checked + .form-icon-check {
+  fill: var(--main-background-color);
   border-color: var(--akcent-color);
+  border: none;
   background-color: var(--akcent-color);
-  background-size: contain;
-  background-origin: border-box;
+  /* background-size: contain;
+  background-origin: border-box; */
+  
+  
 }
 
 .button-form {
